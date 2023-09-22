@@ -1,23 +1,23 @@
-import React from 'react'
-import { DocsThemeConfig } from 'nextra-theme-docs'
-import { useRouter } from 'next/router'
-import seoConfig from './seo.config'
+import React from 'react';
+import { DocsThemeConfig } from 'nextra-theme-docs';
+import { useRouter } from 'next/router';
+import seoConfig from './seo.config';
 
 const config: DocsThemeConfig = {
   useNextSeoProps() {
-    const { route } = useRouter()
-    const { url, images } = seoConfig.openGraph
+    const { route } = useRouter();
+    const { url, images } = seoConfig.openGraph;
 
     if (route === '/') {
-      return { titleTemplate: 'Panda – %s' }
+      return { titleTemplate: 'Panda – %s' };
     }
 
     return {
       titleTemplate: seoConfig.title.template,
-      openGraph: { url, images: [{ url: `${url}${images}` }] }
-    }
+      openGraph: { url, images: [{ url: `${url}${images}` }] },
+    };
   },
-  
+
   head: (
     <>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -31,7 +31,7 @@ const config: DocsThemeConfig = {
       <a href="https://nextra.site" target="_blank">
         🎉 mevETH Launches soon - Read more →
       </a>
-    )
+    ),
   },
   logo: <span>mevETH</span>,
   project: {
@@ -46,8 +46,8 @@ const config: DocsThemeConfig = {
   },
   navigation: {
     prev: true,
-    next: true
+    next: true,
   },
-}
+};
 
-export default config
+export default config;

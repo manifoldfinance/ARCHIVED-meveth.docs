@@ -1,24 +1,19 @@
 {
-  "name": "nextra-docs-template",
-  "version": "0.0.1",
-  "description": "Nextra docs template",
+  "name": "@manifoldfinance/meveth.docs",
+  "version": "0.0.2",
+  "description": "meveth docs",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "prod": "npx next experimental-compile",
+    "deploy": "npm run build && npx next experimental-compile && npx next export && npx next deploy -- --prod",
+    "dev": "NEXT_TELEMETRY_DISABLED=1 next dev",
+    "build": "NEXT_TELEMETRY_DISABLED=1 NODE_ENV=production npx next build",
+    "start": "NEXT_TELEMETRY_DISABLED=1 next start",
+    "lint": "next lint",
+    "test:ci": "jest -modulePathIgnorePatterns=e2e --ci --collectCoverage"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/shuding/nextra-docs-template.git"
-  },
-  "author": "Shu Ding <g@shud.in>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/shuding/nextra-docs-template/issues"
-  },
-  "homepage": "https://github.com/shuding/nextra-docs-template#readme",
+  "license": "UPL-1.0",
   "dependencies": {
-    "next": "^13.0.6",
+    "next": "^13.5.2",
     "nextra": "latest",
     "nextra-theme-docs": "latest",
     "react": "^18.2.0",
@@ -27,10 +22,39 @@
   "devDependencies": {
     "@types/jest": "^29.5.5",
     "@types/node": "18.11.10",
+    "@typescript-eslint/eslint-plugin": "^6.7.2",
+    "@typescript-eslint/parser": "^6.7.2",
+    "eslint": "^8.49.0",
+    "eslint-config-next": "^13.5.2",
     "jest": "^29.7.0",
+    "prettier": "^3.0.3",
     "ts-jest": "^29.1.1",
     "ts-morph": "^20.0.0",
     "typescript": "^5.2.2",
     "vitest": "^0.34.5"
+  },
+  "nextBundleAnalysis": {
+    "budget": 281600,
+    "budgetPercentIncreaseRed": 20,
+    "minimumChangeThreshold": 0,
+    "showDetails": true
+  },
+  "browserslist": {
+    "production": [
+      ">0.3%",
+      "not dead",
+      "not op_mini all",
+      "not IE > 0",
+      "not samsung 4",
+      "not and_uc 12.12"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version",
+      "last 2 Edge major versions ",
+      "last 2 iOS major versions ",
+      "not iOS 12.5"
+    ]
   }
 }
