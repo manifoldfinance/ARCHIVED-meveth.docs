@@ -3,13 +3,13 @@
     "type": "page"
   },
   "index": {
-    "title": "Home",
+    "title": "Index",
     "theme": {
       "breadcrumb": false,
       "footer": true,
-      "sidebar": false,
+      "sidebar": true,
       "toc": true,
-      "pagination": false
+      "pagination": true
     }
   }
 }
